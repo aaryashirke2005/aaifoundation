@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            margin:0;
+            padding:0;
+        }
+
+        header{
+            background:#1e3a8a;
+            color:white;
+            padding:15px 30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .container{
+            padding:30px;
+        }
+
+        .cards{
+            display:flex;
+            gap:20px;
+            margin-bottom:30px;
+        }
+
+        .card{
+            flex:1;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .buttons{
+            margin-bottom:30px;
+        }
+
+        .buttons a{
+            text-decoration:none;
+            background:#1e3a8a;
+            color:white;
+            padding:10px 15px;
+            border-radius:6px;
+            margin-right:10px;
+        }
+
+        canvas{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>📈 Admin Dashboard</h2>
+    <a href="/logout" style="color:white;background:red;padding:6px 12px;border-radius:5px;text-decoration:none;">Logout</a>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Donation</h3>
+            <h1>₹{{ total_donation | default(0) }}</h1>
+        </div>
+
+        <div class="card">
+            <h3>Total Donors</h3>
+            <h1>{{ total_donors | default(0) }}</h1>
+        </div>
+
+        <div class="card">
+            <h3>Total Volunteers</h3>
+            <h1>{{ total_volunteers | default(0) }}</h1>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="/admin_donations">View Donations</a>
+        <a href="/admin_volunteers">View Volunteers</a>
+        <a href="/export_donations">Export Donations</a>
+    </div>
+
+    <!-- ONLY ONE CANVAS -->
+    <canvas id="chart" height="100"></canvas>
+
+</div>
+
+<script>
+const totalDonation = {{ total_donation | default(0) }};
+const totalDonors = {{ total_donors | default(0) }};
+const totalVolunteers = {{ total_volunteers | default(0) }};
+
+new Chart(document.getElementById("chart"), {
+    type: "bar",
+    data: {
+        labels: ["Donation", "Donors", "Volunteers"],
+        datasets: [{
+            label: "Statistics",
+            data: [totalDonation, totalDonors, totalVolunteers],
+            backgroundColor: ["#1e3a8a", "#16a34a", "#f59e0b"]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

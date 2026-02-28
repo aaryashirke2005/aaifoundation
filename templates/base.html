@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="i6Bsjf855Jcl1jjbsl7DLrxFCPNtjB221dFoQoXW3tI" />
+    <title>आई फाउंडेशन</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo-section">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+        <div class="title">
+            <h2>आई फाउंडेशन</h2>
+            <p>समाजासाठी समर्पित</p>
+        </div>
+    </div>
+
+   <nav class="nav-buttons">
+    <a href="{{ url_for('index') }}">मुख्यपृष्ठ</a>
+    <a href="{{ url_for('about') }}">आमच्या विषयी</a>
+    <a href="{{ url_for('mission') }}">मिशन</a>
+    <a href="{{ url_for('programs') }}">कार्यक्रम</a>
+    <a href="{{ url_for('team') }}">टीम</a>
+    <a href="{{ url_for('donation') }}">दान करा</a>
+    <a href="/volunteer" class="volunteer-btn">🤝 स्वयंसेवक बना</a>
+    
+</header>
+<!-- Main content -->
+{% block content %}
+{% endblock %}
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h3>आमच्या बद्दल</h3>
+            <p>
+                आई Foundation डोंबिवली समाज कल्याणासाठी समर्पित संस्था आहे.
+            </p>
+        </div>
+
+        <!-- Important Links -->
+        <div class="footer-col">
+            <h3>महत्वाचे दुवे</h3>
+            <a href="{{ url_for('index') }}">आमच्या विषयी</a>
+            <a href="{{ url_for('mission') }}">मिशन</a>
+            <a href="{{ url_for('programs') }}">कार्यक्रम</a>
+            <a href="/admin_login">Admin</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h3>संपर्क करा</h3>
+            <p>Phone: कु.क्षितिज संभाजी दोरुगडे: 9321726217,<br>
+               श्री. बाबू रा. पवार : 918928335243</p>
+            <p>
+                Address: अजय स्मृती अपार्टमेंट ऑफिस नंबर १
+                आजदे पाडा. पार्वती महादेव मंदिर समोर 
+                जिमखाना रोड डोंबिवली पूर्व
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2024 आई Foundation डोंबिवली. सर्व हक्क राखीव.</p>
+        <p>समाजसेवेत आयुष्याबरोबर असा - "सेवा हीच खरी साधना"</p>
+    </div>
+    <script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+    const update=()=>{
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target/100;
+
+        if(count < target){
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(update,20);
+        }else{
+            counter.innerText = target;
+        }
+    }
+    update();
+});
+</script>
+</footer>
+</body>
+</html>

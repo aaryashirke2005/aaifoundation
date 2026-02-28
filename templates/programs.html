@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="program-section">
+<div class="container">
+
+<h2 class="program-title">आमचे कार्य</h2>
+
+<div class="program-grid">
+
+<!-- CARD 1 -->
+<div class="program-card">
+<img src="{{ url_for('static', filename='cleaning.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+
+<!-- CARD 3 -->
+<div class="program-card">
+<img src="{{ url_for('static', filename='culture.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+<!-- CARD 4 -->
+<div class="program-card">
+<img src="{{ url_for('static', filename='community.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+<!-- CARD 5 -->
+<div class="program-card">
+<img src="{{ url_for('static', filename='cultures.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+
+<div class="program-card">
+<img src="{{ url_for('static', filename='clean2.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+
+<div class="program-card">
+<img src="{{ url_for('static', filename='clean3.png') }}"
+     onclick="openImage(this.src)">
+</div>
+
+<div class="program-card">
+<img src="{{ url_for('static', filename='clean.png') }}"
+     onclick="openImage(this.src)">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Image Popup -->
+<!-- Image Popup -->
+<div id="imgPopup" class="img-popup">
+    <span class="close-btn" onclick="closeImage()">×</span>
+
+    <button class="nav-btn left-btn" onclick="prevImage()">&#10094;</button>
+
+    <img id="popupImg">
+
+    <button class="nav-btn right-btn" onclick="nextImage()">&#10095;</button>
+</div>
+
+<script>
+let currentIndex = 0;
+let images = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+    images = Array.from(document.querySelectorAll(".program-card img"));
+});
+
+function openImage(src) {
+    document.getElementById("imgPopup").style.display = "flex";
+    document.getElementById("popupImg").src = src;
+
+    currentIndex = images.findIndex(img => img.src === src);
+}
+
+function closeImage() {
+    document.getElementById("imgPopup").style.display = "none";
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("popupImg").src = images[currentIndex].src;
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("popupImg").src = images[currentIndex].src;
+}
+</script>
+{% endblock %}

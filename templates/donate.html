@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="donation-section">
+
+    <div class="donation-container">
+        <h1>Support AAI Foundation</h1>
+        <p>Your small contribution can create big change ❤️</p>
+
+        <form action="/donate" method="POST" class="donation-form">
+
+            <!-- Name -->
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+
+            <!-- Email -->
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+
+            <!-- Amount Options -->
+            <div class="amount-options">
+                <label>
+                    <input type="radio" name="amount" value="500" required>
+                    ₹500
+                </label>
+
+                <label>
+                    <input type="radio" name="amount" value="1000">
+                    ₹1000
+                </label>
+
+                <label>
+                    <input type="radio" name="amount" value="5000">
+                    ₹5000
+                </label>
+            </div>
+
+            <!-- Custom Amount -->
+            <input type="number" name="custom_amount" placeholder="Enter Custom Amount (Optional)">
+
+            <!-- Payment Method -->
+            <select name="payment_method" required>
+                <option value="">Select Payment Method</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Credit/Debit Card</option>
+                <option value="Net Banking">Net Banking</option>
+            </select>
+
+            <button type="submit" class="donate-btn">Donate Now</button>
+
+        </form>
+
+        <div class="back-home">
+            <a href="/">⬅ Back to Home</a>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

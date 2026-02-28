@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-inner">
+
+        <div class="hero-left">
+            <h1>आई फाउंडेशन डोंबिवली</h1>
+            <h3>समाजासाठी समर्पित</h3>
+
+            <p>
+                आम्ही शिक्षण, आरोग्य आणि सामाजिक सेवांमध्ये कार्यरत संस्था आहोत.
+            </p>
+     <a href="{{ url_for('about') }}">आमच्या विषयी</a>
+
+        </div>
+
+        <div class="hero-right">
+            <img src="{{ url_for('static', filename='logo.png') }}">
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

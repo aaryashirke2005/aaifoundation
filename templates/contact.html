@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="contact-section">
+  <div class="container">
+
+    <h2 class="contact-title">संपर्क करा</h2>
+    <p class="contact-subtitle">आपण आमच्याशी संपर्क साधू शकता. कृपया खाली फॉर्म भरा.</p>
+
+    <form method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="तुमचे नाव" required>
+      <input type="email" name="email" placeholder="तुमचा ईमेल" required>
+      <textarea name="message" placeholder="तुमचा संदेश" required></textarea>
+      <button type="submit">पाठवा</button>
+    </form>
+
+    {% if message %}
+      <p class="success">{{ message }}</p>
+    {% endif %}
+
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="{{ url_for('index') }}">⬅ मुख्य पृष्ठावर परत जा</a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

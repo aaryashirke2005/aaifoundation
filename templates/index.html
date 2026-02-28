@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-left">
+            <h1>आई फाउंडेशन डोंबिवली</h1>
+            <h3>समाजासाठी समर्पित</h3>
+            <p>
+                आई फाउंडेशन ही समाजकल्याणासाठी समर्पित संस्था आहे.
+                आम्ही शिक्षण, आरोग्य आणि सामाजिक विकासासाठी कार्य करतो.
+            </p>
+            <a href="{{ url_for('about') }}" class="hero-btn">
+    आम्हाला जाणून घ्या →
+</a>
+        </div>
+
+        <div class="hero-right">
+            <img src="{{ url_for('static', filename='logo.png') }}">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

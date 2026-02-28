@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="volunteer-section">
+    <div class="volunteer-box">
+        <h2>🤝  स्वयंसेवक बना</h2>
+
+        <form action="/register_volunteer" method="POST">
+
+            <input type="text" name="name" placeholder="पूरा नाम" required>
+            <input type="email" name="email" placeholder="ईमेल" required>
+            <input type="text" name="phone" placeholder="मोबाइल नंबर" required>
+            <input type="text" name="city" placeholder="शहर" required>
+            <textarea name="message" placeholder="आप क्यों जुड़ना चाहते हैं?"></textarea>
+
+            <button type="submit">रजिस्टर करें</button>
+
+        </form>
+
+        {% if success %}
+            <p class="success-msg">{{ success }}</p>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}
