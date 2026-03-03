@@ -69,7 +69,11 @@ client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 @app.route("/")
 def index():
     return render_template("index.html")
-
+# ✅ ADD THIS PART HERE (robots route)
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
+    
 @app.route("/about")
 def about():
     return render_template("about.html")
