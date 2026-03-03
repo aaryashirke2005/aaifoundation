@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
    <url>
       <loc>https://aaifoundation.onrender.com/</loc>
+   </url>
+
+   <url>
+      <loc>https://aaifoundation.onrender.com/about</loc>
+   </url>
+
+   <url>
+      <loc>https://aaifoundation.onrender.com/mission</loc>
+   </url>
+
+   <url>
+      <loc>https://aaifoundation.onrender.com/programs</loc>
+   </url>
+
+      <url>
+      <loc>https://aaifoundation.onrender.com/team</loc>
    </url>
 </urlset>
