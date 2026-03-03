@@ -69,14 +69,14 @@ client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 @app.route("/")
 def index():
     return render_template("index.html")
-# ✅ ADD THIS PART HERE (robots route)
-@app.route('/robots.txt')
-def robots():
-    return send_from_directory('static', 'robots.txt')
-
+    
 @app.route('/sitemap.xml')
 def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
+    return send_from_directory('static', 'sitemap.xml', mimetype='application/xml')
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt', mimetype='text/plain')
     
 @app.route("/about")
 def about():
