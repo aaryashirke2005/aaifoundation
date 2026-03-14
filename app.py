@@ -63,6 +63,38 @@ RAZORPAY_KEY_ID = "YOUR_KEY_ID"
 RAZORPAY_KEY_SECRET = "YOUR_KEY_SECRET"
 
 client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
+# ================= SEO FILES =================
+
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+Sitemap: https://aaifoundation.onrender.com/sitemap.xml
+""", 200, {"Content-Type": "text/plain"}
+
+@app.route("/sitemap.xml")
+def sitemap():
+    pages = [
+        "https://aaifoundation.onrender.com/",
+        "https://aaifoundation.onrender.com/about",
+        "https://aaifoundation.onrender.com/mission",
+        "https://aaifoundation.onrender.com/programs",
+        "https://aaifoundation.onrender.com/team",
+        "https://aaifoundation.onrender.com/donation",
+        "https://aaifoundation.onrender.com/volunteer"
+    ]
+
+    sitemap_xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    for page in pages:
+        sitemap_xml.append("<url>")
+        sitemap_xml.append(f"<loc>{page}</loc>")
+        sitemap_xml.append("</url>")
+
+    sitemap_xml.append("</urlset>")
+
+    return "\n".join(sitemap_xml), 200, {"Content-Type": "application/xml"}
 
 # ================= PUBLIC ROUTES =================
 
