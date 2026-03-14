@@ -2,8 +2,32 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Google Verification -->
     <meta name="google-site-verification" content="gay3KAG1873r34N0Zp9qjtFz8pVm1zh9yCvXMEWxa6c" />
-    <title>आई फाउंडेशन</title>
+
+    <!-- SEO Title -->
+    <title>AAI Foundation Dombivli | Social Welfare Organization</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="AAI Foundation Dombivli is a social organization dedicated to helping society through education, health programs, and community welfare initiatives.">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="AAI Foundation, Dombivli NGO, social organization Dombivli, charity foundation Maharashtra">
+
+    <!-- Author -->
+    <meta name="author" content="AAI Foundation">
+
+    <!-- Mobile Friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aaifoundation.onrender.com/">
+
+    <!-- Sitemap reference -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://aaifoundation.onrender.com/sitemap.xml">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -18,7 +42,7 @@
         </div>
     </div>
 
-   <nav class="nav-buttons">
+<nav class="nav-buttons">
     <a href="{{ url_for('index') }}">मुख्यपृष्ठ</a>
     <a href="{{ url_for('about') }}">आमच्या विषयी</a>
     <a href="{{ url_for('mission') }}">मिशन</a>
@@ -26,7 +50,7 @@
     <a href="{{ url_for('team') }}">टीम</a>
     <a href="{{ url_for('donation') }}">दान करा</a>
     <a href="/volunteer" class="volunteer-btn">🤝 स्वयंसेवक बना</a>
-    
+</nav>
 </header>
 <!-- Main content -->
 {% block content %}
