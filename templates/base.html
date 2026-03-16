@@ -2,6 +2,8 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="gay3KAG1873r34N0Zp9qjtFz8pVm1zh9yCvXMEWxa6c" />
@@ -12,8 +14,7 @@
     <!-- Meta Description -->
     <meta name="description" content="AAI Foundation Dombivli is a social organization dedicated to helping society through education, health programs, and community welfare initiatives.">
 
-    <!-- Keywords -->
-    <meta name="keywords" content="AAI Foundation, Dombivli NGO, social organization Dombivli, charity foundation Maharashtra">
+    <meta name="keywords" content="AAI Foundation, AAI Foundation Dombivli, NGO Dombivli, charity Maharashtra, आई फाउंडेशन डोंबिवली">
 
     <!-- Author -->
     <meta name="author" content="AAI Foundation">
@@ -29,6 +30,21 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "NGO",
+ "name": "AAI Foundation",
+ "url": "https://aaifoundation.onrender.com",
+ "logo": "https://aaifoundation.onrender.com/static/logo.png",
+ "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Dombivli",
+   "addressRegion": "Maharashtra",
+   "addressCountry": "India"
+ }
+}
+</script>
 </head>
 <body>
 
@@ -52,6 +68,12 @@
     <a href="/volunteer" class="volunteer-btn">🤝 स्वयंसेवक बना</a>
 </nav>
 </header>
+    <h1>AAI Foundation Dombivli</h1>
+
+<p>
+AAI Foundation Dombivli is a social welfare NGO working for education,
+health programs and community development in Maharashtra.
+</p>
 <!-- Main content -->
 {% block content %}
 {% endblock %}
