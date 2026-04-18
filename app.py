@@ -6,7 +6,10 @@ import os
 
 app = Flask(__name__)
 app.secret_key = "admin_secret_key"
-
+@app.after_request
+def add_header(response):
+    response.headers['X-Robots-Tag'] = 'noindex'
+    return response
 # ================= DATABASE =================
 
 DB = "donations.db"
